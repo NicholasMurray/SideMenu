@@ -1,8 +1,22 @@
-import React from 'react'
-import Links from '../Links/Links'
-import { Link } from 'react-router'
+import { hashHistory } from 'react-router'
+import { withRouter } from 'react-router';
 
 var SideBar = React.createClass({
+
+  onButtonClickHandler: function(pageToNaviagateTo) {
+    
+    this.props.onClickHandler()
+
+    setTimeout(() => {
+      var currentHref = window.location.href
+      var currentPath = currentHref.split('/').pop()
+
+      if (currentPath !== pageToNaviagateTo) {
+        hashHistory.push(pageToNaviagateTo)
+      }
+    }, 300);
+  },
+
   render: function() {
     var sidebarClass = this.props.isOpen ? 'sidebar open' : 'sidebar';
     return (
@@ -11,7 +25,7 @@ var SideBar = React.createClass({
         <a href="#/" onClick={ this.props.onClickHandler }>Home</a><br />
         <a href="#/about" onClick={ this.props.onClickHandler }>About</a><br />
         <a href="#/contact" onClick={ this.props.onClickHandler }>Contact</a><br />
-        <Link to={ {pathname: '/contact'} } onClick={() => this.props.onClickHandler }>Contact 7</Link><br />
+        <button onClick={() => this.onButtonClickHandler('contact') }>Contact Button 15</button><br />
         <p>testing</p>
       	<Links />       
     	</div>
@@ -20,3 +34,4 @@ var SideBar = React.createClass({
 });
 
 export default SideBar
+
