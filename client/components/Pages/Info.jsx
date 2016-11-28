@@ -10,7 +10,7 @@ var Info = React.createClass({
         <div>
           <div>This is Info</div>
           <div><Link to={ { pathname: "/terms"} }>terms</Link></div>
-        </div>          
+        </div>
     return (
        <div>
          <Header onClickHandler={ this.props.handleViewSidebar } />

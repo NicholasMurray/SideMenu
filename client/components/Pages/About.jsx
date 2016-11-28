@@ -5,14 +5,13 @@ import SideBar from '../SideBar/SideBar'
 import Content from '../Content/Content'
 import Stuff from '../Stuff/Stuff'
 
-var About = React.createClass({
-  render: function() {
+class About extends React.Component{
+  render() {
     var content = 
         <div>
           <Stuff />
           <div><Link to={ { pathname: "/info"} }>info</Link></div>
          </div>
-        
     return (
        <div>
          <Header onClickHandler={ this.props.handleViewSidebar } />
@@ -21,6 +20,6 @@ var About = React.createClass({
        </div>
     );
   }
-});
+}
 
 export default About

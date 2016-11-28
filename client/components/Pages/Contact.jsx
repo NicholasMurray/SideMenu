@@ -3,8 +3,13 @@ import Header from '../Header/Header'
 import SideBar from '../SideBar/SideBar'
 import Content from '../Content/Content'
 
-var Contact = React.createClass({
-  render: function() {
+class Contact extends React.Component{
+  componentWillUnmount(callback) {
+       setTimeout( () => {
+          console.log('leaving contact 3');
+        },1000);
+    }
+  render() {
     var content = 'This is Contact';
     return (
        <div>
@@ -14,6 +19,6 @@ var Contact = React.createClass({
        </div>
     );
   }
-});
+}
 
 export default Contact

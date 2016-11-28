@@ -3,8 +3,8 @@ import Header from '../Header/Header'
 import SideBar from '../SideBar/SideBar'
 import Content from '../Content/Content'
 
-var Home = React.createClass({
-  render: function() {
+class Home extends React.Component{
+  render() {
     var content = 'This is home';
     return (
        <div>
@@ -14,6 +14,6 @@ var Home = React.createClass({
        </div>
     );
   }
-});
+}
 
 export default Home
